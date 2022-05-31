@@ -18,6 +18,12 @@ for (let customer of customers) {
     imageElement.classList.add("br-100", "h3", "w3", "dib")
     cardElement.appendChild(imageElement)
 
+    //add name
+    let nameElement = document.createElement('h1')
+    nameElement.classList.add('f4')
+    nameElement.innerText = `${customer.name.first} ${customer.name.last}`
+    cardElement.appendChild(nameElement)
+
     customerList.appendChild(cardElement)
 
 }
