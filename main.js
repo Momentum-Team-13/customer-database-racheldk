@@ -41,9 +41,11 @@ for (let customer of customers) {
    //address line 2
    let addressTwoElement = document.createElement('p')
    addressTwoElement.classList.add("lh-copy", "measure", "center", "f6", "black-70")
-   addressTwoElement.innerText = `${customer.location.city}, ${customer.location.state} ${customer.location.postcode}`
+   let stateAbbr = (nameToAbbr(customer.location.state))
+   addressTwoElement.innerText = `${customer.location.city}, ${stateAbbr} ${customer.location.postcode}`
+   console.log(addressTwoElement.innerText)
    cardElement.appendChild(addressTwoElement)
-   //---- figure out how to get abbreviated state names
+   
 
    //DOB
    let birthdateElement = document.createElement('p')
