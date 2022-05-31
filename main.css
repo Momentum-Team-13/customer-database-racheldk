@@ -1,0 +1,6 @@
+#customers {
+    background-color: lightgray;
+    display: flex;
+    flex-wrap: wrap;
+    border: 5px double purple;
+}
