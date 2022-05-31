@@ -24,6 +24,43 @@ for (let customer of customers) {
     nameElement.innerText = `${customer.name.first} ${customer.name.last}`
     cardElement.appendChild(nameElement)
 
+    //try to put cute line border thing here?
+
+    //email
+    let emailElement = document.createElement('p')
+    emailElement.classList.add("lh-copy", "measure", "center", "f6", "black-30")
+    emailElement.innerText = `${customer.email}`
+    cardElement.appendChild(emailElement)
+   
+   //address line 1 
+   let addressOneElement = document.createElement('p')
+   addressOneElement.classList.add("lh-copy", "measure", "center", "f6", "black-70")
+   addressOneElement.innerText = `${customer.location.street.number} ${customer.location.street.name}`
+   cardElement.appendChild(addressOneElement)
+
+   //address line 2
+   let addressTwoElement = document.createElement('p')
+   addressTwoElement.classList.add("lh-copy", "measure", "center", "f6", "black-70")
+   addressTwoElement.innerText = `${customer.location.city}, ${customer.location.state} ${customer.location.postcode}`
+   cardElement.appendChild(addressTwoElement)
+   //---- figure out how to get abbreviated state names
+
+   //DOB
+   let birthdateElement = document.createElement('p')
+   birthdateElement.classList.add("lh-copy", "measure", "center", "f6", "black-70")
+   birthdateElement.innerText = `DOB: ${customer.dob.date}`
+   cardElement.appendChild(birthdateElement)
+    //---- get DOB to look normal
+
+   //customer since 
+   let registrationDateElement = document.createElement('p')
+   registrationDateElement.classList.add("lh-copy", "measure", "center", "f6", "black-70")
+   registrationDateElement.innerText = `Customer since: ${customer.registered.date}`
+   cardElement.appendChild(registrationDateElement)
+   //---- get date to look normal
+
+
+   //make the card show up on the page
     customerList.appendChild(cardElement)
 
 }
