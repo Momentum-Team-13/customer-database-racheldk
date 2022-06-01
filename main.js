@@ -27,19 +27,19 @@ for (let customer of customers) {
     //try to put cute line border thing here?
 
     //email
-    let emailElement = document.createElement('p')
+    let emailElement = document.createElement('div')
     emailElement.classList.add("lh-copy", "measure", "center", "f6", "black-30")
     emailElement.innerText = `${customer.email}`
     cardElement.appendChild(emailElement)
    
    //address line 1 
-   let addressOneElement = document.createElement('p')
+   let addressOneElement = document.createElement('div')
    addressOneElement.classList.add("lh-copy", "measure", "center", "f6", "black-70")
    addressOneElement.innerText = `${customer.location.street.number} ${customer.location.street.name}`
    cardElement.appendChild(addressOneElement)
 
    //address line 2
-   let addressTwoElement = document.createElement('p')
+   let addressTwoElement = document.createElement('div')
    addressTwoElement.classList.add("lh-copy", "measure", "center", "f6", "black-70")
    let stateAbbr = (nameToAbbr(customer.location.state))
    addressTwoElement.innerText = `${customer.location.city}, ${stateAbbr} ${customer.location.postcode}`
@@ -48,8 +48,13 @@ for (let customer of customers) {
    
 
    //DOB
-   let birthdateElement = document.createElement('p')
+   let birthdateElement = document.createElement('div')
    birthdateElement.classList.add("lh-copy", "measure", "center", "f6", "black-70")
+//    let adjustedDate = DateTime(customer.dob.date)
+//     console.log(adjustedDate)
+// DateTime.now(customer.dob.date).toObject()
+// console.log(DateTime.fromISO(`customer.dob.date`).toFormat('yyyy LLL dd'))
+
    birthdateElement.innerText = `DOB: ${customer.dob.date}`
    cardElement.appendChild(birthdateElement)
     //---- get DOB to look normal
